@@ -1,10 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<meta charset="UTF-8" />
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>register</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--[if IE]>
+    <script th:src="@{/js/html5.js}"></script>
+    <![endif]-->
 </head>
-<body>
-<h1>注册</h1>
+<body th:style="'background-image:url(' + ${url} + ');'">
+<div class="container" >
+    <!-- 注册界面 -->
+    <div style="width:100%;height:80%;float:left;margin-top:10%">
+        <h1 style="color: aliceblue">注册信息</h1>
+        <form action="#" method="post" class="form-horizontal" role="form">
+            <!-- form表单的每一项都由bootstrap展示效果。 -->
+            <div class="form-group">
+                <!-- 名称占3个长度col-sm-3，加大化input-lg -->
+                <label class="col-sm-3 control-label input-lg">邮箱</label>
+                <!-- 输入框和提示一共占9个长度col-sm-9，输入框加大化input-lg，提示使用不同颜色的列表（可用警告代替，两者很相似。） -->
+                <div class="col-sm-9">
+                    <input type="text" name="email" id="email" class="form-control input-lg"
+                           placeholder="请输入有效的邮箱地址" style="width:100%;float:left"/>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger" style="float:left;display:none" id="emailMsg"></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 以下如法炮制 -->
+            <div class="form-group">
+                <label class="col-sm-9 control-label input-lg">昵称</label>
+                <div class="col-sm-9">
+                    <input type="text" name="username" id="username" class="form-control input-lg"
+                           placeholder="昵称请设置4~20位字符" style="width:100%;float:left"/>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger" style="float:left;display:none" id="usernameMsg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-9 control-label input-lg">密码</label>
+                <div class="col-sm-9">
+                    <input type="password" name="password" id="password"
+                           class="form-control input-lg" placeholder="密码请设置4~20位字符" style="width:100%;float:left"/>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger" style="float:left;display:none" id="passwordMsg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                </br>
+                <label class="col-sm-9 control-label input-lg">确认密码</label>
+                <div class="col-sm-9">
+                    <input type="password" name="repassword" id="repassword"
+                           class="form-control input-lg" placeholder="请再次输入密码" style="width:100%;float:left"/>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger" style="float:left;display:none" id="confirmMsg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-9 control-label input-lg">手机号</label>
+                <div class="col-sm-9">
+                    <input type="text" name="telephone"
+                           class="form-control input-lg" placeholder="请输入手机号" style="width:100%;float:left"/>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger" style="float:left;display:none" id="phoneMsg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-9 control-label input-lg">性别</label>
+                <div class="col-sm-9">
+                    <label style="color: white" class="radio-inline input-lg">
+                        <input  type="radio" name="gender" value="男" checked="checked"/>男 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                    <label style="color: white" class="radio-inline input-lg">
+                        <input  type="radio" name="gender" value="女"/>女
+                    </label>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label class="col-sm-1 control-label input-lg"></label>
+                <div class="col-sm-5">
+                    <input type="submit" name="submit" value="提交"
+                           class="form-control input-lg btn btn-primary"style="width:100%;float:left"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>

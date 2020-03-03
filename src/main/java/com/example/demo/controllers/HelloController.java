@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -24,7 +25,8 @@ public class HelloController {
         }
     }
     @RequestMapping(value = "/register",method = RequestMethod.GET)
-    public String register(){
+    public String register(Model model){
+        model.addAttribute("url","img/demo-1-bg.jpg");
         return "register";
     }
 }
