@@ -29,4 +29,16 @@ public class HelloController {
         model.addAttribute("url","img/demo-1-bg.jpg");
         return "register";
     }
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
+    @ResponseBody
+    public String regist(@RequestParam("email")String email,
+                         @RequestParam("username")String username,
+                         @RequestParam("password")String password,
+                         @RequestParam("repassword")String repassword,
+                         @RequestParam("telephone")String telephone,
+                         @RequestParam("gender")String gender)
+    {
+        System.out.println(gender);
+ return "登陆成功！";
+    }
 }

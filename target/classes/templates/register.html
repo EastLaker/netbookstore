@@ -10,6 +10,32 @@
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+
+
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                     $.ajax({
+                         type:"post",
+                         data:$('#formid').serializeArray(),
+                         url:"/register",
+                         success:function (result) {
+                                alert(result);
+                         },
+                         errror:function () {
+                           alert("失败");
+                         }
+                     })
+            });
+        });
+    </script>
+
+
+
+
+
     <!--[if IE]>
     <script th:src="@{/js/html5.js}"></script>
     <![endif]-->
@@ -19,7 +45,7 @@
     <!-- 注册界面 -->
     <div style="width:100%;height:80%;float:left;margin-top:10%">
         <h1 style="color: aliceblue">注册信息</h1>
-        <form action="#" method="post" class="form-horizontal" role="form">
+        <form id="formid" class="form-horizontal" role="form">
             <!-- form表单的每一项都由bootstrap展示效果。 -->
             <div class="form-group">
                 <!-- 名称占3个长度col-sm-3，加大化input-lg -->
@@ -90,7 +116,7 @@
             <div class="form-group">
                 <label class="col-sm-1 control-label input-lg"></label>
                 <div class="col-sm-5">
-                    <input type="submit" name="submit" value="提交"
+                    <input id="btn" type="button" name="submit" value="提交"
                            class="form-control input-lg btn btn-primary"style="width:100%;float:left"/>
                 </div>
             </div>
