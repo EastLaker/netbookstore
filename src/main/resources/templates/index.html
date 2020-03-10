@@ -21,7 +21,7 @@
 					<div class="logo_box">
 						<h1>欢迎你</h1>
 						<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
-						<form id="formid" action="#" th:action="@{/user/login}" name="f" method="post">
+						<form id="formid" action="/user/login" name="f" method="post">
 							<div class="input_outer">
 								<span class="u_user"></span>
 								<input name="logname" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">

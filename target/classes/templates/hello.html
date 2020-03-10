@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>hello</title>
+    <script language="JavaScript">
+        history.pushState(null,null,document.URL);
+        window.addEventListener('popstate',function () {
+            history.pushState(null,null,document.URL);
+        });
+    </script>
 </head>
 <body>
 <h1>hello</h1>
 <p>登陆成功！</p>
+<a th:text="${user}">user</a><br/>
+<a th:text="${password}">password</a><br/>
 </body>
 </html>
